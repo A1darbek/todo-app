@@ -5,10 +5,8 @@ services:
     image: mongo:latest
     container_name: mongo-container
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ayderbek
-      MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: todoDB
+    env_file:
+      - .env
     volumes:
       - mongodb-data:/data/db
     ports:
